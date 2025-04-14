@@ -455,9 +455,14 @@ def heuristics():
 
 # Update the main function to include solving and displaying the solved Sudoku
 def main():
-    st.title("Sudoku App")
-    st.write("This is a Sudoku solver app. You can generate a new Sudoku puzzle, solve it, and download the solved puzzle as an image.")
-    
+    st.title("🧩 Sudoku Puzzle Solver")
+    st.write("Solve, check, and download Sudoku puzzles easily with this interactive app.")
+    st.markdown("""
+        - 🔢 **Rule:** Every row, column, and 3×3 box must contain all digits from 1 to 9 without repetition.
+        - ▶️ **Solve:** Use the **Solve Sudoku** button to check your answer. The result will appear below the puzzle.
+        - 🛠️ **Technique:** Select a solving method from the drop-down menu.
+        - 🖼️ **Download:** Save the solved puzzle as an image.
+    """)
 
     col1, col2 = st.columns([3, 1], gap="small")
     with col1:
@@ -468,7 +473,7 @@ def main():
     print_sudoku(assignment)    
     st.sidebar.title("Sudoku Solver Options")
     algo = st.sidebar.selectbox(
-        "Choose the solving algorithm:",
+        "Choose the solving technique:",
         ["Backtracking Search", "Forward Checking (Constraint Propagation)", "Arc Consistency (AC-3)", "Heuristics"]
     )
 
